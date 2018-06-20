@@ -1,12 +1,34 @@
-﻿<Window x:Class="SkoffinFramework.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SkoffinFramework"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"> 
-    <Grid>
-        
-    </Grid>
+﻿<Window x:Class="WpfApp3.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:fa="http://schemas.fontawesome.io/icons/"
+		xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+		mc:Ignorable="d"
+		Title="MainWindow" Height="336" Width="562">
+
+
+	<xctk:BusyIndicator Name="busyIndicator" IsBusy="false">
+		<Grid>
+			<Button Click="GenerateFiles" Content="Generate Files" HorizontalAlignment="Left" Margin="445,226,0,0" VerticalAlignment="Top" Width="90" />
+			<Button Click="DeleteFiles" Content="Delete Files" HorizontalAlignment="Left" Margin="445,251,0,0" VerticalAlignment="Top" Width="90"/>
+
+			<TextBox Name="baseFolderPath" Text="D:/HDD/Programming/Projects/Skoffin/SkoffinSolution/Skoffin/" GotFocus="TextBox_GotFocus" FontStyle="Italic" HorizontalAlignment="Left" Height="17" Margin="127,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="409" RenderTransformOrigin="0.824,-6.238"/>
+			<TextBlock Text="Path to baseFolder:" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Margin="10,13,0,0"/>
+
+			<TextBox Name="pathToViews" Text="Views/Admin/CRUDViews/" GotFocus="TextBox_GotFocus" FontStyle="Italic" HorizontalAlignment="Left" Height="17" Margin="190,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346" RenderTransformOrigin="0.824,-6.238"/>
+			<TextBlock Text="Views:" HorizontalAlignment="Left" Margin="78,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34"/>
+			<TextBlock Text="baseFolder/" FontStyle="Italic" HorizontalAlignment="Left" Margin="127,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"/>
+
+			<TextBox Name="pathToViewModels" Text="Models/ViewModels/AdminViews/CRUDViewModels/" GotFocus="TextBox_GotFocus" FontStyle="Italic" HorizontalAlignment="Left" Height="17" Margin="190,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346" RenderTransformOrigin="0.824,-6.238"/>
+			<TextBlock Text="ViewModels:" HorizontalAlignment="Left" Margin="44,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68"/>
+			<TextBlock Text="baseFolder/" FontStyle="Italic" HorizontalAlignment="Left" Margin="127,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"/>
+
+			<TextBox Name="pathToControllers" Text="Controllers/AdminControllers/CRUDControllers/" GotFocus="TextBox_GotFocus" FontStyle="Italic" HorizontalAlignment="Left" Height="17" Margin="190,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346" RenderTransformOrigin="0.824,-6.238"/>
+			<TextBlock Text="Controllers:" HorizontalAlignment="Left" Margin="51,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61"/>
+			<TextBlock Text="baseFolder/" FontStyle="Italic" HorizontalAlignment="Left" Margin="127,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"/>
+
+		</Grid>
+	</xctk:BusyIndicator>
 </Window>

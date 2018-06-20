@@ -1,0 +1,19 @@
+﻿		[HttpGet]
+		public IActionResult CreateClassName()
+		{
+			return View("~/Views/Admin/CRUDViews/CategoryName/ClassName/CreateClassName.cshtml", new ClassNameViewModel()
+			{
+
+			--PROPERTIES--
+
+			});
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> CreateClassName(ClassName className)
+		{
+			crudRepository.Create(className);
+			crudRepository.Save();
+
+			return await TableName(null, null);
+		}

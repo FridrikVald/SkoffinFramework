@@ -1,0 +1,22 @@
+﻿		[HttpGet]
+		[ActionName("EditClassName")]
+		public IActionResult EditClassNameGet(ClassName className)
+		{
+			return View("~/Views/Admin/CRUDViews/CategoryName/ClassName/EditClassName.cshtml", new ClassNameViewModel 
+			{
+				className = className,
+
+				--PROPERTIES--
+
+			});
+		}
+
+		[HttpPost]
+		[ActionName("EditClassName")]
+		public async Task<IActionResult> EditClassNamePost(ClassName className)
+		{
+			crudRepository.Update(className);
+			crudRepository.Save();
+
+			return await TableName(null, null);
+		}

@@ -1,0 +1,25 @@
+﻿@model Skoffin.Models.DatabaseModels.CategoryNameModels.ClassNameViewModel
+
+@{
+	ViewData["Title"] = "ClassNameDetails";
+	Layout = "~/Views/Admin/Layouts/AdminLayout.cshtml";
+}
+
+<!-- page-wrapper -->
+<div id="page-wrapper">
+
+	<h2>ClassNameDetails</h2>
+
+	<div>
+		<hr />
+		<dl class="dl-horizontal">
+
+		--PROPERTIES--
+
+		</dl>
+	</div>
+	<div>
+		@Html.ActionLink("Edit", "EditClassName", Model)
+	</div>
+</div>
+<!-- /#page-wrapper -->

@@ -1,0 +1,34 @@
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Skoffin.Models.DatabaseModels;
+
+namespace Skoffin.Models.ViewModels.CRUDViewModels
+{
+	public class ClassNameViewModel
+	{
+		/*	
+			ViewModel contents
+		*/
+		public ClassName className;
+
+		--PROPERTIES--
+
+		
+
+
+		/*	
+			Constructors
+		*/
+		//Þessi constructor er notaður þegar verið er að búa til nýtt ClassName
+		public ClassNameViewModel()
+		{
+			this.className = new ClassName();
+		}
+
+		//Þessi constructor er notaður þegar verið er að Edit-a ClassName, þá stillum við klasann eftir input-i
+		public ClassNameViewModel(ClassName className)
+		{
+			this.className = className;
+		}
+	}
+}

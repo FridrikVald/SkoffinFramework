@@ -1,0 +1,31 @@
+﻿		public async Task<IActionResult> TableName(string orderBy, string lastOrderBy)
+		{
+			//Geymum síðasta gildi af orderBy
+			string local_lastOrderBy = orderBy;
+
+			//Útbúum listann sem á að setja í ViewModel-ið
+			var tableName = new List<ClassName>();
+
+			//Náum í aðalgögnin sem á að birta á list view-inu, röðuðum eftir orderBy ef það er ekki null, annars látum við repository-ið um að ákveða default orderBy sem getur verið misjafnt 
+			//eftir base klösum töfluskilgreiningarinnar
+			if (orderBy != null)
+				tableName = (await crudRepository.GetAsync<ClassName>(orderBy: collection => collection.OrderBy(entity => typeof(ClassName).GetProperty(orderBy).GetValue(entity)))).ToList();
+			else
+				tableName = (await crudRepository.GetAsync<ClassName>()).ToList();
+
+			//Ef reynt er að raða listanum aftur eftir síðasta röðunarorði þá snúum við listanum við
+			if (lastOrderBy == orderBy)
+			{
+				local_lastOrderBy = null;
+				tableName.Reverse();
+			}
+
+			return View("~/Views/Admin/CRUDViews/CategoryName/ClassName/TableName.cshtml", new ClassNameListViewModel()
+			{
+				tableName = tableName,
+				lastOrderBy = local_lastOrderBy,
+
+				--PROPERTIES--
+
+			});
+		}

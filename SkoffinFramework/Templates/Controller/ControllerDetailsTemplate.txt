@@ -1,0 +1,11 @@
+﻿		[HttpGet]
+		public IActionResult DetailsClassName(ClassName className)
+		{
+			return View("~/Views/Admin/CRUDViews/CategoryName/ClassName/DetailsClassName.cshtml", new ClassNameViewModel 
+			{
+				className = className,
+
+				--PROPERTIES--
+
+			});
+		}

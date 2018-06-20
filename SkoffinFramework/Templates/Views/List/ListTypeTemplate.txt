@@ -1,0 +1,9 @@
+﻿					<th>
+						<input type="submit" value="@Html.DisplayNameFor(model => model.tableName.FirstOrDefault().PropertyName)" asp-for="orderBy" class="btn btn-default" />
+					</th>
+
+					--PROPERTIES--
+
+					<td>
+						@Html.DisplayFor(modelItem => item.PropertyName)
+					</td>

@@ -1,0 +1,5 @@
+﻿				<div class="form-group">
+					<label asp-for="className.PropertyName" class="control-label"></label>
+					<input asp-for="className.PropertyName" class="form-control" />
+					<span asp-validation-for="className.PropertyName" class="text-danger"></span>
+				</div>

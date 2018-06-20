@@ -1,0 +1,32 @@
+﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+using Skoffin.DAL;
+using Skoffin.Data;
+using Skoffin.Models.DatabaseModels;
+using Skoffin.Models.ViewModels.CRUDViewModels;
+
+namespace Skoffin.Controllers
+{
+	public class CRUDCategoryNameController : Controller
+	{
+		/*	
+			Setup og Constructor
+		*/
+		private readonly ApplicationDbContext applicationDbContext;
+		private readonly CRUDRepository crudRepository;
+		private readonly SelectableRepository selectableRepository;
+		public CRUDCategoryNameController(ApplicationDbContext _applicationDbContext)
+		{
+			applicationDbContext = _applicationDbContext;
+			
+			crudRepository = new CRUDRepository(applicationDbContext);
+			selectableRepository = new SelectableRepository(applicationDbContext);
+		}
+
+		--PROPERTIES--
+
+	}
+}

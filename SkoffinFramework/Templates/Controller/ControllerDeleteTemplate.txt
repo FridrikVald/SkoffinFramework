@@ -1,0 +1,7 @@
+﻿		public async Task<IActionResult> DeleteClassName(ClassName className)
+		{
+			crudRepository.Delete(className);
+			crudRepository.Save();
+
+			return await TableName(null, null);
+		}

@@ -1,0 +1,2 @@
+﻿		public List<PropertyName> propertyNameList;
+		public List<SelectListItem> propertyNameSelectableList;

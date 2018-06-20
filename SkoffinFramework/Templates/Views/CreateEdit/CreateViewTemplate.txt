@@ -1,0 +1,26 @@
+﻿@model Skoffin.Models.ViewModels.CRUDViewModels.ClassNameViewModel
+
+@{
+	ViewData["Title"] = "CreateClassName";
+	Layout = "~/Views/Admin/Layouts/AdminLayout.cshtml";
+}
+
+<!-- page-wrapper -->
+<div id="page-wrapper">
+	<h2>Create ClassName</h2>
+	<hr />
+	<div class="row">
+		<div class="col-md-4">
+			<form asp-action="CreateClassName">
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+				
+				--PROPERTIES--
+
+				<div class="form-group">
+					<input type="submit" value="Create" class="btn btn-default" />
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- /#page-wrapper -->

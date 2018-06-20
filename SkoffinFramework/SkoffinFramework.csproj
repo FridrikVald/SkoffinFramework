@@ -48,12 +48,33 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="TemplateParser.cs" />
+    <Compile Include="ViewGenerator.cs" />
+    <Compile Include="ViewModelGenerator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -62,6 +83,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ControllerGenerator.cs" />
+    <Compile Include="DatabaseMockup.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -85,6 +109,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -92,6 +117,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Templates\Controller\ControllerCreateTemplate.txt" />
+    <Resource Include="Templates\Controller\ControllerDeleteTemplate.txt" />
+    <Resource Include="Templates\Controller\ControllerDetailsTemplate.txt" />
+    <Resource Include="Templates\Controller\ControllerEditTemplate.txt" />
+    <Resource Include="Templates\Controller\ControllerListTemplate.txt" />
+    <Resource Include="Templates\Controller\ControllerSelectableTemplate.txt" />
+    <Resource Include="Templates\Controller\ControllerTemplate.txt" />
+    <Resource Include="Templates\ViewModel\ViewModelListTemplate.txt" />
+    <Resource Include="Templates\ViewModel\ViewModelSelectableTemplate.txt" />
+    <Resource Include="Templates\ViewModel\ViewModelTemplate.txt" />
+    <Resource Include="Templates\Views\CreateEdit\CreateEditBoolTemplate.txt" />
+    <Resource Include="Templates\Views\CreateEdit\CreateEditSelectableTemplate.txt" />
+    <Resource Include="Templates\Views\CreateEdit\CreateEditTypeTemplate.txt" />
+    <Resource Include="Templates\Views\CreateEdit\CreateViewTemplate.txt" />
+    <Resource Include="Templates\Views\CreateEdit\EditViewTemplate.txt" />
+    <Resource Include="Templates\Views\Details\DetailsTypeTemplate.txt" />
+    <Resource Include="Templates\Views\Details\DetailsViewTemplate.txt" />
+    <Resource Include="Templates\Views\List\ListSelectableTemplate.txt" />
+    <Resource Include="Templates\Views\List\ListTypeTemplate.txt" />
+    <Resource Include="Templates\Views\List\ListViewTemplate.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

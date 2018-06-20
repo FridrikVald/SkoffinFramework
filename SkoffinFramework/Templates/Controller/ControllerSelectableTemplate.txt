@@ -1,0 +1,2 @@
+﻿				propertyNameList = selectableRepository.GetAll<PropertyName>().ToList(),
+				propertyNameSelectableList = selectableRepository.GetAsSelectListItems<PropertyName>(),

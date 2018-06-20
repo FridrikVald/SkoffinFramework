@@ -1,0 +1,45 @@
+﻿@model Skoffin.Models.ViewModels.CRUDViewModels.ClassNameListViewModel
+
+@{
+	ViewData["Title"] = "TableName";
+	Layout = "~/Views/Admin/Layouts/AdminLayout.cshtml";
+}
+
+<!-- page-wrapper -->
+<div id="page-wrapper">
+	<h2>TableName</h2>
+
+	<p>
+		<a asp-action="CreateClassName">Create New ClassName</a>
+	</p>
+
+	<form asp-action="TableName">
+		<div class="form-group" hidden>
+			<input asp-for="lastOrderBy" value="@Model.lastOrderBy" readonly class="form-control" />
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					
+					--PROPERTIES--
+
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model.tableName)
+				{
+				<tr>
+
+					--PROPERTIES--
+
+					<td>
+						@Html.ActionLink("Edit", "EditClassName", item)
+					</td>
+				</tr>
+				}
+			</tbody>
+		</table>
+	</form>
+</div>
+<!-- /#page-wrapper -->

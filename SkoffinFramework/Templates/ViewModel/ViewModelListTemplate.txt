@@ -1,0 +1,25 @@
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Skoffin.Models.DatabaseModels;
+
+namespace Skoffin.Models.ViewModels.CRUDViewModels
+{
+	public class ClassNameListViewModel
+	{
+		/*	
+			ViewModel contents
+		*/
+		public List<ClassName> tableName;
+
+		--PROPERTIES--
+
+
+
+
+		/*	
+			OrderBy
+		*/
+		public string orderBy { get; set; }
+		public string lastOrderBy { get; set; }         //Geymir síðasta OrderBy til að detect-a hvort það eigi að snúa ordering á listanum við
+	}
+}

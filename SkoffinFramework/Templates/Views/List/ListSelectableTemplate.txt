@@ -1,0 +1,17 @@
+﻿					<th>
+						<input type="submit" value="@Html.DisplayNameFor(model => model.tableName.FirstOrDefault().PropertyNameId)" asp-for="orderBy" class="btn btn-default" />
+					</th>
+
+					--PROPERTIES--
+
+					<td>
+						@foreach (var propertyName in Model.propertyNameList)
+						{
+							if (item.PropertyNameId == propertyName.Id)
+							{
+								@propertyName.Name;
+								break;
+							}
+						}
+						@Html.DisplayFor(modelItem => item.PropertyNameId)
+					</td>

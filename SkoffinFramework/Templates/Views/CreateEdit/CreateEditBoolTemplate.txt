@@ -1,0 +1,3 @@
+﻿				<div class="checkbox">
+					<input asp-for="className.PropertyName" /> @Html.DisplayNameFor(model => model.className.PropertyName)
+				</div>

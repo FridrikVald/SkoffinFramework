@@ -1,0 +1,6 @@
+﻿			<dt>
+				@Html.DisplayNameFor(model => model.PropertyName)
+			</dt>
+			<dd>
+				@Html.DisplayFor(model => model.PropertyName)
+			</dd>
